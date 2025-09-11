@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Login Page</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      overflow: hidden;
+    }
+
+    /* Floating animation background circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      animation: float 8s infinite ease-in-out;
+    }
+
+    .circle:nth-child(1) { width: 120px; height: 120px; top: 10%; left: 15%; }
+    .circle:nth-child(2) { width: 80px; height: 80px; bottom: 20%; right: 20%; }
+    .circle:nth-child(3) { width: 200px; height: 200px; bottom: 10%; left: 5%; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Login box */
+    .login-box {
+      position: relative;
+      width: 350px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .login-box .input-box {
+      margin: 15px 0;
+      text-align: left;
+    }
+
+    .login-box label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .login-box button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #4CAF50;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .login-box button:hover {
+      background: #45a049;
+      transform: scale(1.05);
+    }
+
+    .login-box p {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .login-box a {
+      color: #ffdd57;
+      text-decoration: none;
+    }
+
+    .login-box a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating circles background -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <!-- Login box -->
+  <div class="login-box">
+    <h2>Login</h2>
+    <form>
+      <div class="input-box">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter Username">
+      </div>
+      <div class="input-box">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter Password">
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="#">Create one</a></p>
+  </div>
+
+</body>
+</html>
